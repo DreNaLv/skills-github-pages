@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diabetes: Sua Saúde em Suas Mãos!</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
+        }
+        .tab-content {
+            display: none;
+        }
+        .tab-content.active {
+            display: block;
+        }
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+        }
+        .accordion-button.active + .accordion-content {
+            max-height: 1000px; /* Adjust as needed */
+        }
+        /* Custom checkbox style */
+        .custom-checkbox:checked + label:before {
+            background-color: #3b82f6; /* Tailwind blue-500 */
+            border-color: #3b82f6;
+        }
+        .custom-checkbox:checked + label:after {
+            content: '✔';
+            position: absolute;
+            left: 4px;
+            top: -2px;
+            color: white;
+            font-size: 14px;
+        }
+        label:before {
+            content: '';
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border: 2px solid #d1d5db; /* Tailwind gray-300 */
+            border-radius: 4px;
+            margin-right: 8px;
+            vertical-align: middle;
+            transition: all 0.2s;
+        }
+        label {
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-blue-100 via-indigo-50 to-purple-100 text-gray-800">
+
+    <header class="bg-blue-600 text-white text-center py-10 px-6 shadow-xl">
+        <div class="container mx-auto max-w-4xl">
+            <!-- Logo no Cabeçalho ATUALIZADO -->
+            <img src="https://masterfar.com.br/backoffice/uploads/loja/logo/logo-masterfarma-250-01.jpg" alt="Logo Masterfarma" class="mx-auto mb-6 h-16 sm:h-20 object-contain">
+            
+            <svg class="w-16 h-16 sm:w-20 sm:h-20 mx-auto mb-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path></svg>
+            <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-4">Diabetes: Sua Saúde em Suas Mãos!</h1>
+            <p class="text-lg sm:text-xl md:text-2xl mb-8">Um guia prático para viver bem e com qualidade.</p>
+            <a href="#entendendo" class="bg-white text-blue-600 font-semibold py-3 px-6 sm:px-8 rounded-lg shadow-md hover:bg-blue-50 transition duration-300 text-lg">Descubra Como!</a>
+        </div>
+    </header>
+
+    <main class="container mx-auto p-4 sm:p-6 md:p-10 space-y-10 sm:space-y-12">
+
+        <section id="entendendo" class="bg-white p-6 sm:p-8 rounded-xl shadow-lg">
+            <h2 class="text-2xl sm:text-3xl font-bold text-blue-700 mb-6 text-center">Entendendo o Diabetes</h2>
+            <div class="grid md:grid-cols-2 gap-6 sm:gap-8 items-center">
+                <div>
+                    <p class="text-base sm:text-lg mb-4">De forma simples, o diabetes é uma condição em que o corpo não consegue usar ou produzir adequadamente a <strong>insulina</strong>, um hormônio que controla a quantidade de açúcar (glicose) no sangue. Glicose é nossa principal fonte de energia!</p>
+                    <h3 class="text-lg sm:text-xl font-semibold text-blue-600 mb-3 mt-6">Tipos mais comuns:</h3>
+                    <ul class="list-disc list-inside space-y-2 mb-4 text-base sm:text-lg">
+                        <li><strong>Tipo 1:</strong> O corpo produz pouca ou nenhuma insulina. Geralmente aparece na infância ou adolescência.</li>
+                        <li><strong>Tipo 2:</strong> O corpo não usa a insulina de forma eficaz (resistência à insulina) ou não produz o suficiente. Mais comum em adultos, muitas vezes ligado ao estilo de vida.</li>
+                        <li><strong>Gestacional:</strong> Surge durante a gravidez em algumas mulheres.</li>
+                    </ul>
+                </div>
+                <div class="bg-blue-50 p-4 sm:p-6 rounded-lg shadow">
+                    <p class="text-base sm:text-lg font-semibold text-blue-700 mb-4">Você sabe qual o seu tipo de diabetes?</p>
+                    <div class="space-y-3">
+                        <div><input type="radio" name="tipo_diabetes" id="tipo1" class="mr-2 custom-radio"><label for="tipo1" class="text-base sm:text-lg">Tipo 1</label></div>
+                        <div><input type="radio" name="tipo_diabetes" id="tipo2" class="mr-2 custom-radio"><label for="tipo2" class="text-base sm:text-lg">Tipo 2</label></div>
+                        <div><input type="radio" name="tipo_diabetes" id="gestacional" class="mr-2 custom-radio"><label for="gestacional" class="text-base sm:text-lg">Gestacional</label></div>
+                        <div><input type="radio" name="tipo_diabetes" id="naosei" class="mr-2 custom-radio"><label for="naosei" class="text-base sm:text-lg">Não sei / Outro</label></div>
+                    </div>
+                    <p class="mt-6 text-sm sm:text-md text-blue-600 italic">Sua participação é fundamental! Conhecer seu diabetes é o primeiro passo para o controle.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="bg-white p-4 sm:p-6 md:p-8 rounded-xl shadow-lg">
+            <h2 class="text-2xl sm:text-3xl font-bold text-purple-700 mb-8 text-center">Pilares do Cuidado ao Diabético</h2>
+            <div class="mb-6 border-b border-gray-200">
+                <nav class="flex flex-wrap -mb-px text-sm sm:text-base" aria-label="Tabs">
+                    <button class="tab-button active md:text-xl whitespace-nowrap mr-2 md:mr-4 py-3 px-3 sm:px-4 border-b-2 font-medium border-purple-600 text-purple-600" data-tab="alimentacao">🍎 Alimentação</button>
+                    <button class="tab-button md:text-xl whitespace-nowrap mr-2 md:mr-4 py-3 px-3 sm:px-4 border-b-2 font-medium border-transparent hover:text-gray-600 hover:border-gray-300" data-tab="movimento">🏃‍♀️ Movimento e Medicação</button>
+                    <button class="tab-button md:text-xl whitespace-nowrap py-3 px-3 sm:px-4 border-b-2 font-medium border-transparent hover:text-gray-600 hover:border-gray-300" data-tab="autocuidado">🛡️ Prevenção e Autocuidado</button>
+                </nav>
+            </div>
+
+            <div id="alimentacao" class="tab-content active">
+                <h3 class="text-xl sm:text-2xl font-semibold text-purple-600 mb-6">Comer Bem para Viver Melhor</h3>
+                <p class="text-base sm:text-lg mb-4">Uma alimentação saudável é a base do tratamento do diabetes. Não é sobre restrição total, mas sim sobre escolhas inteligentes!</p>
+                <div class="grid md:grid-cols-2 gap-4 sm:gap-6">
+                    <div class="bg-purple-50 p-4 sm:p-6 rounded-lg">
+                        <h4 class="text-lg sm:text-xl font-semibold text-purple-700 mb-3">Dicas de Ouro:</h4>
+                        <ul class="list-disc list-inside space-y-2 text-base sm:text-lg">
+                            <li><strong>Prefira:</strong> Frutas, verduras, legumes, grãos integrais, proteínas magras.</li>
+                            <li><strong>Modere:</strong> Açúcares, doces, frituras, alimentos processados.</li>
+                            <li><strong>Fracione as refeições:</strong> 5 a 6 pequenas refeições ao dia.</li>
+                            <li><strong>Leia os rótulos:</strong> Atenção aos carboidratos, açúcares e gorduras.</li>
+                        </ul>
+                        <p class="mt-4 text-sm sm:text-md text-purple-600 italic">Consulte um nutricionista para um plano alimentar personalizado!</p>
+                    </div>
+                    <div class="bg-purple-50 p-4 sm:p-6 rounded-lg">
+                        <h4 class="text-lg sm:text-xl font-semibold text-purple-700 mb-3">Pequeno Desafio Interativo:</h4>
+                        <p class="mb-2 text-base sm:text-lg">Quais destes alimentos você já inclui na sua rotina?</p>
+                        <div class="space-y-2">
+                            <div><input type="checkbox" id="maca" class="custom-checkbox"><label for="maca" class="text-base sm:text-lg">Maçã</label></div>
+                            <div><input type="checkbox" id="alface" class="custom-checkbox"><label for="alface" class="text-base sm:text-lg">Alface</label></div>
+                            <div><input type="checkbox" id="pao_integral" class="custom-checkbox"><label for="pao_integral" class="text-base sm:text-lg">Pão Integral</label></div>
+                            <div><input type="checkbox" id="feijao" class="custom-checkbox"><label for="feijao" class="text-base sm:text-lg">Feijão</label></div>
+                        </div>
+                        <label for="mudanca_alimentar" class="block mt-4 mb-1 font-medium text-base sm:text-lg">Qual pequena mudança você pode fazer na sua alimentação ESTA SEMANA?</label>
+                        <input type="text" id="mudanca_alimentar" class="w-full p-2 border border-purple-300 rounded-md focus:ring-purple-500 focus:border-purple-500">
+                    </div>
+                </div>
+            </div>
+
+            <div id="movimento" class="tab-content">
+                <h3 class="text-xl sm:text-2xl font-semibold text-purple-600 mb-6">Atividade Física e Medicamentos: Seus Aliados!</h3>
+                <div class="grid md:grid-cols-2 gap-4 sm:gap-6">
+                    <div class="bg-green-50 p-4 sm:p-6 rounded-lg">
+                        <h4 class="text-lg sm:text-xl font-semibold text-green-700 mb-3">Corpo em Movimento, Saúde em Dia!</h4>
+                        <ul class="list-disc list-inside space-y-2 text-base sm:text-lg">
+                            <li><strong>Qualquer atividade conta:</strong> Caminhada, dança, natação...</li>
+                            <li><strong>Meta:</strong> Pelo menos 150 minutos de atividade moderada por semana.</li>
+                            <li><strong>Converse com seu médico antes de iniciar!</strong></li>
+                        </ul>
+                        <label for="atividade_fisica" class="block mt-4 mb-1 font-medium text-base sm:text-lg">Qual atividade física você poderia experimentar?</label>
+                        <input type="text" id="atividade_fisica" class="w-full p-2 border border-green-300 rounded-md focus:ring-green-500 focus:border-green-500">
+                    </div>
+                    <div class="bg-green-50 p-4 sm:p-6 rounded-lg">
+                        <h4 class="text-lg sm:text-xl font-semibold text-green-700 mb-3">Medicação: Siga à Risca!</h4>
+                         <ul class="list-disc list-inside space-y-2 text-base sm:text-lg mb-3">
+                            <li><strong>Horário Certo:</strong> Conforme orientado.</li>
+                            <li><strong>Dose Correta:</strong> Não altere por conta própria.</li>
+                            <li><strong>Não Interrompa:</strong> Sem falar com seu médico.</li>
+                            <li><strong>Armazenamento:</strong> Siga as instruções.</li>
+                        </ul>
+                        <p class="text-base sm:text-lg font-semibold mb-2 text-green-700">Checklist Rápido da Medicação:</p>
+                        <div class="space-y-1">
+                            <div><input type="checkbox" id="sei_nome_med" class="custom-checkbox"><label for="sei_nome_med" class="text-base sm:text-lg">Sei o nome dos meus medicamentos.</label></div>
+                            <div><input type="checkbox" id="sei_para_que_serve" class="custom-checkbox"><label for="sei_para_que_serve" class="text-base sm:text-lg">Entendo para que servem.</label></div>
+                            <div><input type="checkbox" id="sei_como_tomar" class="custom-checkbox"><label for="sei_como_tomar" class="text-base sm:text-lg">Sei como e quando tomar/aplicar.</label></div>
+                        </div>
+                         <p class="mt-4 text-sm sm:text-md text-green-600 italic">Dúvidas sobre seus medicamentos? Pergunte ao seu farmacêutico!</p>
+                    </div>
+                </div>
+            </div>
+
+            <div id="autocuidado" class="tab-content">
+                <h3 class="text-xl sm:text-2xl font-semibold text-purple-600 mb-6">Monitorar e Cuidar: O Segredo da Prevenção!</h3>
+                <div class="grid md:grid-cols-2 gap-4 sm:gap-6">
+                    <div class="bg-yellow-50 p-4 sm:p-6 rounded-lg">
+                        <h4 class="text-lg sm:text-xl font-semibold text-yellow-700 mb-3">Glicemia na Ponta do Dedo!</h4>
+                        <ul class="list-disc list-inside space-y-2 text-base sm:text-lg mb-3">
+                            <li><strong>Frequência:</strong> Siga a orientação médica.</li>
+                            <li><strong>Anote os resultados:</strong> Leve nas consultas.</li>
+                        </ul>
+                        <p class="text-base sm:text-lg mb-1">Você tem aparelho de glicemia? <input type="radio" name="aparelho_glic" id="glic_sim" class="ml-2 mr-1"><label for="glic_sim" class="text-sm sm:text-base">Sim</label> <input type="radio" name="aparelho_glic" id="glic_nao" class="ml-2 mr-1"><label for="glic_nao" class="text-sm sm:text-base">Não</label></p>
+
+
+                        <h4 class="text-lg sm:text-xl font-semibold text-yellow-700 mb-3 mt-6">Cuidado com os Pés!</h4>
+                        <ul class="list-disc list-inside space-y-2 text-base sm:text-lg">
+                            <li><strong>Examine diariamente:</strong> Cortes, bolhas, calos.</li>
+                            <li><strong>Lave e seque bem.</strong></li>
+                            <li><strong>Use sapatos confortáveis.</strong></li>
+                        </ul>
+                         <p class="mt-4 text-sm sm:text-md text-yellow-600 italic">Consultas regulares ao oftalmologista e nefrologista são importantes!</p>
+                    </div>
+                     <div class="bg-red-50 p-4 sm:p-6 rounded-lg">
+                        <h4 class="text-lg sm:text-xl font-semibold text-red-700 mb-3">Sinais de Alerta Importantes:</h4>
+                        <p class="text-base sm:text-lg mb-2">🚨 <strong>Hipoglicemia (glicose BAIXA):</strong> Tremores, suor frio, fraqueza, tontura, fome excessiva. Tenha algo doce à mão (ex: 3 balas, 1 col. sopa de açúcar).</p>
+                        <p class="text-base sm:text-lg">⚠️ <strong>Hiperglicemia (glicose ALTA):</strong> Muita sede, urinar com frequência, boca seca, cansaço. Comunique seu médico.</p>
+
+                        <h4 class="text-lg sm:text-xl font-semibold text-gray-700 mb-3 mt-6">Anotações Importantes:</h4>
+                        <label for="prox_consulta" class="block text-base sm:text-lg">Próxima consulta médica:</label>
+                        <input type="date" id="prox_consulta" class="w-full p-2 mb-2 border border-gray-300 rounded-md text-sm sm:text-base">
+                        <label for="tel_medico" class="block text-base sm:text-lg">Telefone do médico:</label>
+                        <input type="tel" id="tel_medico" class="w-full p-2 mb-2 border border-gray-300 rounded-md text-sm sm:text-base">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="mitos_verdades" class="bg-white p-6 sm:p-8 rounded-xl shadow-lg">
+            <h2 class="text-2xl sm:text-3xl font-bold text-teal-700 mb-8 text-center">Mitos vs. Verdades sobre o Diabetes</h2>
+            <div class="space-y-6">
+                <div class="accordion-item bg-teal-50 p-1 rounded-lg shadow">
+                    <button class="accordion-button w-full text-left text-lg sm:text-xl font-semibold text-teal-800 p-3 sm:p-4 flex justify-between items-center hover:bg-teal-100 rounded-md transition">
+                        <span>"Diabetes tipo 2 só afeta pessoas acima do peso."</span>
+                        <span class="arrow transform transition-transform duration-300 text-xl sm:text-2xl">+</span>
+                    </button>
+                    <div class="accordion-content px-3 sm:px-4 pb-3 sm:pb-4 text-base sm:text-lg">
+                        <p><strong>Verdade:</strong> Embora o excesso de peso seja um fator de risco importante, pessoas com peso normal também podem desenvolver diabetes tipo 2 devido a fatores genéticos e estilo de vida.</p>
+                    </div>
+                </div>
+                <div class="accordion-item bg-teal-50 p-1 rounded-lg shadow">
+                    <button class="accordion-button w-full text-left text-lg sm:text-xl font-semibold text-teal-800 p-3 sm:p-4 flex justify-between items-center hover:bg-teal-100 rounded-md transition">
+                        <span>"Quem tem diabetes não pode comer doces."</span>
+                        <span class="arrow transform transition-transform duration-300 text-xl sm:text-2xl">+</span>
+                    </button>
+                    <div class="accordion-content px-3 sm:px-4 pb-3 sm:pb-4 text-base sm:text-lg">
+                        <p><strong>Verdade:</strong> O ideal é uma alimentação equilibrada. Pequenas porções de doces podem ser consumidas ocasionalmente, com orientação profissional e dentro de um plano alimentar saudável. O importante é o controle da quantidade total de carboidratos.</p>
+                    </div>
+                </div>
+                <div class="accordion-item bg-teal-50 p-1 rounded-lg shadow">
+                    <button class="accordion-button w-full text-left text-lg sm:text-xl font-semibold text-teal-800 p-3 sm:p-4 flex justify-between items-center hover:bg-teal-100 rounded-md transition">
+                        <span>"Insulina causa dependência ou complicações."</span>
+                        <span class="arrow transform transition-transform duration-300 text-xl sm:text-2xl">+</span>
+                    </button>
+                    <div class="accordion-content px-3 sm:px-4 pb-3 sm:pb-4 text-base sm:text-lg">
+                        <p><strong>Verdade:</strong> A insulina é um medicamento vital para muitas pessoas com diabetes. Ela não causa dependência e, quando usada corretamente sob orientação médica, ajuda a controlar a glicemia e prevenir complicações.</p>
+                    </div>
+                </div>
+            </div>
+            <p class="text-center mt-8 text-base sm:text-lg text-teal-600">Tem mais dúvidas? Converse com seu farmacêutico ou médico!</p>
+        </section>
+    </main>
+
+    <footer class="bg-gray-800 text-white text-center p-6 sm:p-8 mt-10 sm:mt-12">
+        <div class="container mx-auto flex flex-col md:flex-row items-center justify-between">
+            <!-- Logo no Rodapé ATUALIZADO -->
+            <img src="data:image/jpeg;base64,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" alt="Logo Rodapé Farmácia" class="h-10 mb-4 md:mb-0 object-contain">
+            <div class="text-center md:text-left">
+                <p class="text-sm sm:text-base">&copy; <span id="currentYear"></span> Sua Farmácia/Organização de Saúde. Todos os direitos reservados.</p>
+                <p class="text-xs sm:text-sm text-gray-400 mt-1">Este material é informativo e não substitui a consulta médica ou farmacêutica.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Tab functionality
+        const tabButtons = document.querySelectorAll('.tab-button');
+        const tabContents = document.querySelectorAll('.tab-content');
+
+        tabButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                tabButtons.forEach(btn => {
+                    btn.classList.remove('active', 'border-purple-600', 'text-purple-600');
+                    btn.classList.add('border-transparent', 'hover:text-gray-600', 'hover:border-gray-300');
+                });
+                tabContents.forEach(content => content.classList.remove('active'));
+
+                button.classList.add('active', 'border-purple-600', 'text-purple-600');
+                button.classList.remove('border-transparent', 'hover:text-gray-600', 'hover:border-gray-300');
+                document.getElementById(button.dataset.tab).classList.add('active');
+            });
+        });
+
+        // Accordion functionality for Mitos vs. Verdades
+        const accordionButtons = document.querySelectorAll('.accordion-button');
+        accordionButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const isActive = button.classList.toggle('active');
+                const arrow = button.querySelector('.arrow');
+                if (isActive) {
+                    arrow.textContent = '-';
+                    arrow.classList.add('rotate-180');
+                } else {
+                    arrow.textContent = '+';
+                    arrow.classList.remove('rotate-180');
+                }
+            });
+        });
+
+        // Set current year in footer
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+    </script>
+
+</body>
+</html>
+
